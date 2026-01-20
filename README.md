@@ -1,14 +1,14 @@
 # Midas
 Project repo for the JPMC Advanced Software Engineering Forage program
 
-Midas Core – Transaction Processing Service
-Overview
+## Midas Core – Transaction Processing Service
+# Overview
 
 Midas Core is a Spring Boot microservice that simulates a high-volume transaction processing system, integrating Kafka messaging, REST APIs, and a relational database. This project was completed as part of the JPMorgan Chase & Co Advanced Software Engineering Virtual Experience Program.
 
 It demonstrates handling transactions, applying incentives from an external API, and exposing user balance data via a REST endpoint.
 
-Features
+# Features
 
 Kafka Consumer: Consumes transaction messages from a configurable Kafka topic.
 
@@ -22,7 +22,7 @@ Persistence Layer: Uses Spring Data JPA with H2 database to store users and tran
 
 Debuggable Workflow: Includes checkpoints for inspecting balances during execution.
 
-Tech Stack
+# Tech Stack
 
 Java 17
 
@@ -38,7 +38,7 @@ REST API (Spring Web)
 
 Maven
 
-Project Structure
+# Project Structure
 src/main/java
 ├── com.jpmc.midascore
 │   ├── config          # RestTemplate Bean configuration
@@ -47,7 +47,7 @@ src/main/java
 │   ├── kafka           # Kafka listeners for transaction messages
 │   └── repository      # Spring Data JPA repositories
 
-How to Run
+# How to Run
 
 Clone the repository:
 
@@ -55,22 +55,22 @@ git clone <your-repo-url>
 cd <repo-folder>
 
 
-Start Kafka (if testing Kafka integration) and the Incentive API JAR:
+# Start Kafka (if testing Kafka integration) and the Incentive API JAR:
 
-java -jar services/incentive-api.jar
+java -jar services/transaction-incentive-api.jar
 
 
-Build and run the service:
+# Build and run the service:
 
 mvn clean install
 mvn spring-boot:run
 
 
-Query user balances via REST API:
+# Query user balances via REST API:
 
 GET http://localhost:33400/balance?userId=<id>
 
-Key Accomplishments
+## Key Accomplishments
 
 Integrated Kafka messaging with Spring Boot for high-throughput transaction ingestion.
 
@@ -80,7 +80,7 @@ Developed a REST API to expose user balances while maintaining architectural bou
 
 Verified system behavior using Maven tests and debugger-driven inspection.
 
-Notes
+# Notes
 
 Default database is H2 (in-memory).
 
@@ -88,6 +88,6 @@ Incentive API must be running for incentive calculations to be applied.
 
 Balances are stored as floats and updated atomically per transaction.
 
-License
+## License
 
 This project is for educational purposes only and was completed as part of the Forage virtual experience program. It is not intended for commercial use.
